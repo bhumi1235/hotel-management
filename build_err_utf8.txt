@@ -1,0 +1,188 @@
+﻿
+> hotel-management@0.0.0 build
+> vite build
+
+[36mvite v8.0.8 [32mbuilding client environment for production...[36m[39m
+[2K
+transforming...Γ£ô 2130 modules transformed.
+node.exe : [33m[lightningcss minify] Unknown at rule: @tailwind
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([33m[lightning...rule: @tailwind:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+1  |  @import 
+url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wgh...
+2  |  
+3  |  @tailwind base;
+   |           ^
+4  |  
+5  |  @tailwind components;[39m
+[33m[lightningcss minify] Unknown at rule: @tailwind
+3  |  @tailwind base;
+4  |  
+5  |  @tailwind components;
+   |           ^
+6  |  
+7  |  @tailwind utilities;[39m
+[33m[lightningcss minify] Unknown at rule: @tailwind
+5  |  @tailwind components;
+6  |  
+7  |  @tailwind utilities;
+   |           ^
+8  |  
+9  |  @layer base {[39m
+[33m[lightningcss minify] Unknown at rule: @apply
+18 |  
+19 |    body {
+20 |      @apply bg-[#FAF6EF] text-[#1A1A1A] font-sans antialiased overflow-x-hidden;
+   |            ^
+21 |      font-family: 'Inter', sans-serif;
+22 |    }[39m
+[33m[lightningcss minify] Unknown at rule: @apply
+29 |  @layer components {
+30 |    .btn-primary {
+31 |      @apply bg-[#D4A40A] text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 ease-in-out 
+hover:bg-...
+   |            ^
+32 |    }
+33 |    [39m
+[33m[lightningcss minify] Unknown at rule: @apply
+33 |    
+34 |    .btn-outline {
+35 |      @apply border border-[#D4A40A] text-[#D4A40A] px-6 py-3 rounded-xl font-medium transition-all duration-300 
+ease-i...
+   |            ^
+36 |    }
+37 |  [39m
+[33m[lightningcss minify] Unknown at rule: @apply
+37 |  
+38 |    .nav-link {
+39 |      @apply relative font-medium text-sm transition-colors hover:text-[#D4A40A];
+   |            ^
+40 |    }
+41 |  [39m
+[33m[lightningcss minify] Unknown at rule: @apply
+42 |    .nav-link::after {
+43 |      content: '';
+44 |      @apply absolute bottom-0 left-0 w-full h-0.5 bg-[#D4A40A] origin-left scale-x-0 transition-transform 
+duration-300...
+   |            ^
+45 |    }
+46 |  [39m
+[33m[lightningcss minify] Unknown at rule: @apply
+46 |  
+47 |    .nav-link:hover::after {
+48 |      @apply scale-x-100;
+   |            ^
+49 |    }
+50 |  [39m
+[33m[lightningcss minify] Unknown at rule: @apply
+50 |  
+51 |    .glass-card {
+52 |      @apply bg-white/70 backdrop-blur-lg border border-white/30 shadow-lg rounded-2xl;
+   |            ^
+53 |    }
+54 |  [39m
+[33m[lightningcss minify] Unknown at rule: @apply
+54 |  
+55 |    .input-field {
+56 |      @apply w-full px-4 py-3 rounded-xl bg-[#F1F3F7] border border-transparent focus:border-[#0D1F5C] 
+focus:bg-white f...
+   |            ^
+57 |    }
+58 |  }[39m
+rendering chunks...
+[31mΓ£ù[39m Build failed in 642ms
+[31merror during build:
+[31mBuild failed with 4 errors:
+
+[31m[MISSING_EXPORT] Error:[0m "Facebook" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.js".
+   [38;5;246mΓò¡[0m[38;5;246mΓöÇ[0m[38;5;246m[[0m src/components/Footer.jsx:2:10 [38;5;246m][0m
+   [38;5;246mΓöé[0m
+ [38;5;246m2 Γöé[0m 
+[38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m 
+[0m[38;5;249m{[0m[38;5;249m [0mFacebook[38;5;249m,[0m[38;5;249m [0m[38;5;249mT[0m[38;5;249mw[0m[38;5;249m
+i[0m[38;5;249mt[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mI[0m[
+38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mg[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;24
+9mm[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mL[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249mk[0m[38;5;249me[0m
+[38;5;249md[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249m,[0m[38;5;249m 
+[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249md[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m 
+[0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249ml[0m[3
+8;5;249mu[0m[38;5;249mc[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mr[0m[38;5;249
+me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  Γöé[0m          ΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇ  
+ [38;5;240m  Γöé[0m              Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇ Missing export
+[38;5;246mΓöÇΓöÇΓöÇΓò»[0m
+
+[31m[MISSING_EXPORT] Error:[0m "Twitter" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.js".
+   [38;5;246mΓò¡[0m[38;5;246mΓöÇ[0m[38;5;246m[[0m src/components/Footer.jsx:2:20 [38;5;246m][0m
+   [38;5;246mΓöé[0m
+ [38;5;246m2 Γöé[0m 
+[38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m 
+[0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mF[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mb[0m[3
+8;5;249mo[0m[38;5;249mo[0m[38;5;249mk[0m[38;5;249m,[0m[38;5;249m [0mTwitter[38;5;249m,[0m[38;5;249m [0m[3
+8;5;249mI[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mg[0m[38;5;249mr[0m[38;5;249
+ma[0m[38;5;249mm[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mL[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249mk[0m
+[38;5;249me[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249m,[0m[38;5;249m 
+[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249md[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m 
+[0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249ml[0m[3
+8;5;249mu[0m[38;5;249mc[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mr[0m[38;5;249
+me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  Γöé[0m                    ΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇ  
+ [38;5;240m  Γöé[0m                       Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇ Missing export
+[38;5;246mΓöÇΓöÇΓöÇΓò»[0m
+
+[31m[MISSING_EXPORT] Error:[0m "Instagram" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.js".
+   [38;5;246mΓò¡[0m[38;5;246mΓöÇ[0m[38;5;246m[[0m src/components/Footer.jsx:2:29 [38;5;246m][0m
+   [38;5;246mΓöé[0m
+ [38;5;246m2 Γöé[0m 
+[38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m 
+[0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mF[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mb[0m[3
+8;5;249mo[0m[38;5;249mo[0m[38;5;249mk[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mT[0m[38;5;249mw[0m[38;5;249
+mi[0m[38;5;249mt[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249m,[0m[38;5;249m 
+[0mInstagram[38;5;249m,[0m[38;5;249m [0m[38;5;249mL[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249mk[0m[38;5;249
+me[0m[38;5;249md[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249m,[0m[38;5;249m 
+[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249md[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m 
+[0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249ml[0m[3
+8;5;249mu[0m[38;5;249mc[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mr[0m[38;5;249
+me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  Γöé[0m                             ΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇΓöÇ  
+ [38;5;240m  Γöé[0m                                 Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ Missing export
+[38;5;246mΓöÇΓöÇΓöÇΓò»[0m
+
+[31m[MISSING_EXPORT] Error:[0m "Linkedin" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.js".
+   [38;5;246mΓò¡[0m[38;5;246mΓöÇ[0m[38;5;246m[[0m src/components/Footer.jsx:2:40 [38;5;246m][0m
+   [38;5;246mΓöé[0m
+ [38;5;246m2 Γöé[0m 
+[38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m 
+[0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mF[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249me[0m[38;5;249mb[0m[3
+8;5;249mo[0m[38;5;249mo[0m[38;5;249mk[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mT[0m[38;5;249mw[0m[38;5;249
+mi[0m[38;5;249mt[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mI[0m
+[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mg[0m[38;5;249mr[0m[38;5;249ma[0m[38;5;2
+49mm[0m[38;5;249m,[0m[38;5;249m [0mLinkedin[38;5;249m,[0m[38;5;249m 
+[0m[38;5;249mS[0m[38;5;249me[0m[38;5;249mn[0m[38;5;249md[0m[38;5;249m [0m[38;5;249m}[0m[38;5;249m 
+[0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249ml[0m[3
+8;5;249mu[0m[38;5;249mc[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mr[0m[38;5;249
+me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  Γöé[0m                                        ΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇ  
+ [38;5;240m  Γöé[0m                                            Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇ Missing export
+[38;5;246mΓöÇΓöÇΓöÇΓò»[0m
+[31m
+    at aggregateBindingErrorsIntoJsError 
+(file:///C:/Users/91917/OneDrive/Desktop/hotel-management/node_modules/rolldown/dist/shared/error-w0u7biK-.mjs:48:18)
+    at unwrapBindingResult 
+(file:///C:/Users/91917/OneDrive/Desktop/hotel-management/node_modules/rolldown/dist/shared/error-w0u7biK-.mjs:18:128)
+    at #build (file:///C:/Users/91917/OneDrive/Desktop/hotel-management/node_modules/rolldown/dist/shared/rolldown-buil
+d-DtGk-m96.mjs:3313:34)
+    at async buildEnvironment 
+(file:///C:/Users/91917/OneDrive/Desktop/hotel-management/node_modules/vite/dist/node/chunks/node.js:32954:64)
+    at async Object.build 
+(file:///C:/Users/91917/OneDrive/Desktop/hotel-management/node_modules/vite/dist/node/chunks/node.js:33376:19)
+    at async Object.buildApp 
+(file:///C:/Users/91917/OneDrive/Desktop/hotel-management/node_modules/vite/dist/node/chunks/node.js:33373:153)
+    at async CAC.<anonymous> 
+(file:///C:/Users/91917/OneDrive/Desktop/hotel-management/node_modules/vite/dist/node/cli.js:778:3) {
+  errors: [Getter/Setter]
+}[39m

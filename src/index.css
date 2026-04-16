@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #050505;
+  --color-secondary: #D9A05B;
+  --color-background: #050505;
+  --color-surface: #121212;
+  --color-muted: #1A1A1A;
+  --color-text: #FAFAFA;
+  --color-text-muted: #9CA3AF;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-secondary text-primary px-6 py-3 rounded-xl font-bold uppercase tracking-widest text-xs transition-all duration-300 ease-in-out hover:bg-[#c4904d] hover:shadow-[0_0_20px_rgba(217,160,91,0.3)] hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .btn-outline {
+    @apply border border-secondary text-secondary px-6 py-3 rounded-xl font-bold uppercase tracking-widest text-xs transition-all duration-300 ease-in-out hover:bg-secondary hover:text-primary hover:shadow-[0_0_20px_rgba(217,160,91,0.2)] hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .nav-link {
+    @apply relative font-medium text-sm transition-colors text-text/80 hover:text-white uppercase tracking-wider;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-full h-[1px] bg-secondary origin-left scale-x-0 transition-transform duration-300 ease-in-out;
+  }
+
+  .nav-link:hover::after {
+    @apply scale-x-100;
+  }
+
+  .glass-card {
+    @apply bg-[#121212]/80 backdrop-blur-xl border border-white/5 shadow-2xl rounded-2xl;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3.5 rounded-xl bg-[#0a0a0a] border border-white/10 focus:border-secondary focus:bg-[#121212] focus:ring-1 focus:ring-secondary/50 transition-all duration-300 outline-none text-text placeholder:text-text-muted text-sm font-medium;
+  }
+}
+
+/* Custom Scrollbar for top-secret feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D9A05B;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
