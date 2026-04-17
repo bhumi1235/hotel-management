@@ -1,27 +1,28 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Wifi, Minimize, User, Coffee, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import roomImg from '../assets/room.png';
 
 const Rooms = () => {
   const rooms = [
     {
-      title: "Alpha Blackout Suite",
-      price: "$2,500",
+      title: "Presidential Suite",
+      price: "₹250,000",
       image: roomImg,
-      features: ["2500 sqft", "4 Agents", "Encrypted Line"]
+      features: ["2500 sqft", "4 Guests", "Premium Service"]
     },
     {
-      title: "Ocean Sector Reserve",
-      price: "$1,200",
+      title: "Ocean View Reserve",
+      price: "₹120,000",
       image: roomImg,
-      features: ["1200 sqft", "2 Agents", "Private Extraction"]
+      features: ["1200 sqft", "2 Guests", "Ocean View"]
     },
     {
-      title: "Ghost Sanctuary",
-      price: "$850",
+      title: "Private Sanctuary",
+      price: "₹85,000",
       image: roomImg,
-      features: ["900 sqft", "2 Agents", "Radar Evading"]
+      features: ["900 sqft", "2 Guests", "Private Entrance"]
     }
   ];
 
@@ -36,7 +37,7 @@ const Rooms = () => {
             viewport={{ once: true }}
             className="text-secondary font-bold tracking-[0.3em] uppercase text-[10px] mb-4 block"
           >
-            Classified Zones
+            Exclusive Stays
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -45,7 +46,7 @@ const Rooms = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-serif text-white uppercase tracking-widest"
           >
-            Secured <span className="italic text-secondary font-sans normal-case tracking-normal font-light">Habitats</span>
+            Available <span className="italic text-secondary font-sans normal-case tracking-normal font-light">Rooms</span>
           </motion.h2>
         </div>
 
@@ -69,7 +70,7 @@ const Rooms = () => {
                 />
                 <div className="absolute top-4 right-4 bg-black/90 backdrop-blur-md px-4 py-2 rounded-sm shadow-xl border border-white/10 flex items-center gap-2">
                   <span className="font-bold text-secondary text-sm tracking-wider">{room.price}</span>
-                  <span className="text-[10px] text-text/40 font-bold uppercase tracking-widest">/ OP</span>
+                  <span className="text-[10px] text-text/40 font-bold uppercase tracking-widest">/ NIGHT</span>
                 </div>
               </div>
               
@@ -89,12 +90,12 @@ const Rooms = () => {
                 </div>
                 
                 <div className="pt-6 border-t border-white/5">
-                  <button className="text-text font-bold text-[10px] tracking-widest uppercase flex items-center group-hover:text-secondary transition-colors gap-3 justify-between w-full">
-                    <span>Access Schematics</span>
+                  <Link to="/rooms" className="text-text font-bold text-[10px] tracking-widest uppercase flex items-center group-hover:text-secondary transition-colors gap-3 justify-between w-full">
+                    <span>View Details</span>
                     <svg className="w-4 h-4 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

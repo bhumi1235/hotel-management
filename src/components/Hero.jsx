@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Star, MapPin } from 'lucide-react';
-import BookingCard from './BookingCard';
+import { Link } from 'react-router-dom';
 import heroImg from '../assets/hero.png';
 
 const Hero = () => {
@@ -27,22 +27,22 @@ const Hero = () => {
             className="flex flex-col items-start max-w-xl"
           >
             <div className="flex items-center gap-4 mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
               <span className="text-text/50 font-bold tracking-[0.3em] uppercase text-[9px] border border-white/10 px-3 py-1 rounded bg-black">
-                Clearance Level: Alpha
+                Grand Aura Exclusive
               </span>
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-[1.1] mb-6 uppercase tracking-widest">
               Absolute <br />
-              <span className="italic font-sans text-secondary capitalize font-light tracking-normal">Discretion.</span>
+              <span className="italic font-sans text-secondary capitalize font-light tracking-normal">Luxury.</span>
             </h1>
             <p className="text-text/50 text-sm leading-relaxed mb-10 font-bold uppercase tracking-wider max-w-md">
-              A private enclave of unparalleled stealth. Delve into breathtaking horizons and uncompromising black-tie service.
+              A private enclave of unparalleled elegance. Delve into breathtaking horizons and uncompromising black-tie service.
             </p>
             <div className="flex flex-wrap items-center gap-4 w-full md:w-auto">
-              <button className="btn-primary w-full md:w-auto">Request Clearance</button>
-              <button className="btn-outline w-full md:w-auto">View Briefing</button>
+              <Link to="/rooms" className="block text-center btn-primary w-full md:w-auto">View Rooms</Link>
+              <Link to="/rooms" className="block text-center btn-outline w-full md:w-auto">Book Now</Link>
             </div>
           </motion.div>
 
@@ -73,10 +73,10 @@ const Hero = () => {
                 ))}
               </div>
               <p className="text-xs font-bold uppercase tracking-widest text-text leading-relaxed mb-4">
-                "Complete blackout. The extraction code was instantaneous."
+                "Complete perfection. The booking process was instantaneous."
               </p>
               <div className="text-[9px] uppercase tracking-[0.2em] text-text/40 font-bold">
-                — ANONYMOUS ASSET
+                — VERIFIED GUEST
               </div>
             </motion.div>
 
@@ -91,15 +91,13 @@ const Hero = () => {
                  <span className="text-white font-serif font-bold text-lg">2</span>
                </div>
                <div>
-                 <p className="text-xs font-bold uppercase tracking-widest text-secondary">Vacancies</p>
+                 <p className="text-xs font-bold uppercase tracking-widest text-secondary">Available Rooms</p>
                  <p className="text-[10px] text-text/50 font-bold uppercase tracking-widest">Global Network</p>
                </div>
             </motion.div>
           </div>
         </div>
       </div>
-
-      <BookingCard />
     </div>
   );
 };

@@ -1,13 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import heroImg from '../assets/hero.png';
 
 const Experiences = () => {
   const experiences = [
-    { title: "Ghost Protocol", desc: "Absolute privacy and off-grid relaxation mechanisms.", img: heroImg },
-    { title: "Culinary Assets", desc: "Acquired Michelin-grade tactical nutrition.", img: heroImg },
-    { title: "Liquid Perimeter", desc: "Horizon-defying aquatic boundary lines.", img: heroImg },
-    { title: "Closed Networks", desc: "Secure environments for confidential summits.", img: heroImg }
+    { title: "Private Spa", desc: "Absolute privacy and world-class relaxation treatments.", img: heroImg },
+    { title: "Fine Dining", desc: "Michelin-grade culinary experiences delivered to you.", img: heroImg },
+    { title: "Infinity Pool", desc: "Breathtaking ocean views from our temperature regulated pools.", img: heroImg },
+    { title: "Event Halls", desc: "Secure environments for summits and private gatherings.", img: heroImg }
   ];
 
   return (
@@ -23,7 +24,7 @@ const Experiences = () => {
               viewport={{ once: true }}
               className="text-text/40 font-bold tracking-[0.4em] uppercase text-[9px] mb-4 block border border-white/10 inline-block px-3 py-1 bg-black rounded"
             >
-              Operations
+              Amenities
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -32,7 +33,7 @@ const Experiences = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl font-serif text-white uppercase tracking-widest"
             >
-              Strategic <span className="italic text-secondary font-sans normal-case tracking-normal font-light">Deployments</span>
+              Premium <span className="italic text-secondary font-sans normal-case tracking-normal font-light">Experiences</span>
             </motion.h2>
           </div>
           <motion.div 
@@ -40,9 +41,9 @@ const Experiences = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <button className="btn-outline">
-              Access Full Log
-            </button>
+            <Link to="/rooms" className="text-center block btn-outline">
+              Book Now
+            </Link>
           </motion.div>
         </div>
       </div>
@@ -68,7 +69,7 @@ const Experiences = () => {
             
             <div className="absolute inset-0 p-8 flex flex-col justify-end border border-white/0 group-hover:border-secondary/20 transition-colors">
                <div className="transform transition-transform duration-500 ease-out translate-y-4 group-hover:translate-y-0">
-                  <div className="text-[9px] uppercase tracking-widest text-secondary font-bold mb-3 opactiy-0 group-hover:opacity-100 transition-opacity">File {i+1}00</div>
+                  <div className="text-[9px] uppercase tracking-widest text-secondary font-bold mb-3 opactiy-0 group-hover:opacity-100 transition-opacity">Amenity {i+1}</div>
                   <h3 className="text-2xl font-serif text-white mb-2 uppercase tracking-wide">{exp.title}</h3>
                   <p className="text-text/50 font-bold uppercase tracking-wider text-[10px] leading-relaxed mb-6">{exp.desc}</p>
                   <div className="w-12 h-1 bg-white/20 rounded-sm group-hover:w-24 group-hover:bg-secondary transition-all duration-500"></div>
