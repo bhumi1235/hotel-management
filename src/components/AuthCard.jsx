@@ -13,6 +13,17 @@ const AuthCard = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [otp, setOtp] = useState(['', '', '', '', '', '']);
+  const [timer, setTimer] = useState(59);
+
+  // Timer Effect
+  React.useEffect(() => {
+    let interval;
+    if (isOtpStep && timer > 0) {
+      interval = setInterval(() => setTimer(t => t - 1), 1000);
+    }
+    return () => clearInterval(interval);
+  }, [isOtpStep, timer]);
   
   const { login, register } = useContext(PortalContext);
   const navigate = useNavigate();
@@ -34,6 +45,21 @@ const AuthCard = ({ isOpen, onClose }) => {
   const handleSignupSubmit = (e) => {
     e.preventDefault();
     setIsOtpStep(true);
+    setTimer(59);
+    setOtp(['', '', '', '', '', '']);
+  };
+  
+  const handleOtpChange = (index, value) => {
+    if (isNaN(value)) return;
+    const newOtp = [...otp];
+    newOtp[index] = value.substring(value.length - 1);
+    setOtp(newOtp);
+    
+    // Auto-advance
+    if (value && index < 5) {
+      const nextInput = document.getElementById(`otp-${index + 1}`);
+      if (nextInput) nextInput.focus();
+    }
   };
   
   const handleOtpConfirm = () => {
@@ -153,16 +179,23 @@ const AuthCard = ({ isOpen, onClose }) => {
                   
                   {errorText && <p className="text-xs text-red-500 mb-4 font-bold tracking-wider">{errorText}</p>}
 
-                  <div className="flex justify-center gap-2 mb-8">
-                    {[1, 2, 3, 4, 5, 6].map((i) => (
+                  <div className="flex justify-center gap-2 mb-6">
+                    {otp.map((digit, index) => (
                       <input 
-                        key={i}
+                        key={index}
+                        id={`otp-${index}`}
                         type="text" 
-                        maxLength={1} 
+                        maxLength={1}
+                        value={digit}
+                        onChange={(e) => handleOtpChange(index, e.target.value)}
                         className="w-12 h-14 bg-black border border-white/20 text-white text-center text-xl font-bold focus:border-secondary focus:ring-1 focus:ring-secondary outline-none rounded-sm transition-all"
                       />
                     ))}
                   </div>
+
+                  <p className="text-[10px] text-text-muted tracking-[0.1em] uppercase mb-8">
+                    Resend code in <span className="text-secondary font-bold">0:{timer < 10 ? `0${timer}` : timer}</span>
+                  </p>
 
                   <button onClick={handleOtpConfirm} className="w-full bg-secondary text-black font-bold uppercase tracking-widest text-xs py-4 rounded-md hover:bg-white transition-colors duration-300">
                     Confirm Registration

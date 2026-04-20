@@ -61,7 +61,7 @@ const Experiences = () => {
             <img 
               src={exp.img} 
               alt={exp.title} 
-              className="absolute inset-0 w-full h-full object-cover transition-all duration-[3s] ease-out group-hover:scale-110 group-hover:rotate-1 filter grayscale mix-blend-luminosity opacity-40 group-hover:opacity-70 group-hover:grayscale-0" 
+              className="absolute inset-0 w-full h-full object-cover transition-all duration-[3s] ease-out group-hover:scale-110 group-hover:rotate-1 filter saturate-[.35] opacity-60 group-hover:saturate-100 group-hover:opacity-100"
             />
             
             {/* Severe stealth gradient overlay */}

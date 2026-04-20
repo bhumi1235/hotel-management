@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '100px 100px' }}></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/80 to-primary pointer-events-none z-0"></div>
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full mt-10 md:mt-0">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-8 relative z-10 w-full mt-10 md:mt-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* LEFT: Text & CTAs */}
@@ -54,7 +54,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute top-10 right-0 w-[450px] h-[550px] rounded-sm overflow-hidden shadow-[0_0_80px_rgba(0,0,0,1)] border border-white/10 filter grayscale mix-blend-luminosity hover:grayscale-0 hover:mix-blend-normal transition-all duration-1000"
+              className="absolute top-10 right-0 w-[450px] h-[550px] rounded-sm overflow-hidden shadow-[0_0_80px_rgba(0,0,0,1)] border border-white/10 filter saturate-[.35] opacity-80 hover:saturate-100 hover:opacity-100 transition-all duration-1000"
             >
               <img src={heroImg} alt="Luxury Resort" className="w-full h-full object-cover" />
             </motion.div>

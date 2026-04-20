@@ -6,6 +6,7 @@ import { PortalProvider, PortalContext } from './context/PortalContext';
 import LandingPage from './pages/LandingPage';
 import CustomerDashboard from './pages/CustomerDashboard';
 import RoomsPage from './pages/RoomsPage';
+import RoomDetailsPage from './pages/RoomDetailsPage';
 import CheckoutPage from './pages/CheckoutPage';
 
 // Protection Middleware
@@ -23,6 +24,7 @@ function App() {
           {/* Public Routes */}
           <Route path="/" element={<LandingPage />} />
           <Route path="/rooms" element={<RoomsPage />} />
+          <Route path="/room/:id" element={<RoomDetailsPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
 
           {/* Customer Route */}

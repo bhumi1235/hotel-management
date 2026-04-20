@@ -31,7 +31,7 @@ const RoomsPage = () => {
   return (
     <div className="min-h-screen bg-[#050505] flex flex-col text-text font-sans">
       <Navbar onOpenAuth={() => {}} />
-      <div className="flex-grow max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
+      <div className="flex-grow max-w-[1440px] mx-auto px-6 pt-32 pb-20 w-full flex flex-col">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-light-graphite pb-8 gap-6 border-white/10">
           <div>
@@ -81,7 +81,7 @@ const RoomsPage = () => {
           {filtered.map(room => (
             <div key={room.room_id} className="bg-surface rounded-sm border border-white/5 overflow-hidden group hover:border-secondary/30 transition-colors">
               <div className="h-48 relative overflow-hidden">
-                <img src={roomImg} alt={room.name} className="w-full h-full object-cover filter grayscale mix-blend-luminosity opacity-40 group-hover:opacity-80 transition-all duration-700" />
+                <img src={roomImg} alt={room.name} className="w-full h-full object-cover filter saturate-[.35] opacity-60 group-hover:saturate-100 group-hover:opacity-100 transition-all duration-700" />
                 <div className="absolute top-2 right-2 bg-black/80 px-3 py-1 border border-white/10 text-secondary text-xs font-bold tracking-widest uppercase">
                   ₹{room.price} / NIGHT
                 </div>
@@ -90,14 +90,24 @@ const RoomsPage = () => {
                 <div className="text-[10px] text-text-muted uppercase tracking-[0.2em] font-bold mb-1">{room.type} Class</div>
                 <h3 className="text-xl font-serif text-white uppercase tracking-wider mb-6">{room.name}</h3>
                 
-                <div className="flex justify-between items-center border-t border-white/5 pt-4">
-                  <span className="text-[10px] uppercase font-bold text-text-muted tracking-widest">GUESTS: 0{room.capacity} | BEDS: 0{room.beds || 1}</span>
-                  <button 
-                    onClick={() => navigate(`/checkout`, { state: { room } })}
-                    className="text-white hover:text-secondary flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest transition-colors"
-                  >
-                    Book Now <ArrowRight size={12} />
-                  </button>
+                <div className="flex justify-between items-center border-t border-white/5 pt-4 mt-auto">
+                  <span className="text-[10px] uppercase font-bold text-text-muted tracking-widest hidden sm:block">
+                    GUESTS: 0{room.capacity} | BEDS: 0{room.beds || 1}
+                  </span>
+                  <div className="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-end">
+                    <button 
+                      onClick={() => navigate(`/room/${room.room_id}`)}
+                      className="text-white/60 hover:text-white flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest transition-colors"
+                    >
+                      Details
+                    </button>
+                    <button 
+                      onClick={() => navigate(`/checkout`, { state: { room } })}
+                      className="text-secondary hover:text-white flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest transition-colors"
+                    >
+                      Book Now <ArrowRight size={12} />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

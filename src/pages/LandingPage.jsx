@@ -27,7 +27,7 @@ const LandingPage = () => {
         <Hero />
         
         {/* Float BookingCard here instead of trapping it inside Hero */}
-        <div className="relative z-50 -mt-24 pb-8">
+        <div className="relative z-40 -mt-24 pb-8">
           <BookingCard />
         </div>
         

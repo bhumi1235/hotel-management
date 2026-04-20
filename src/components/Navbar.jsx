@@ -32,7 +32,7 @@ const Navbar = ({ onOpenAuth }) => {
           : 'bg-transparent border-transparent py-8'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-8 flex justify-between items-center relative w-full">
         {/* Logo */}
         <Link to="/" className="cursor-pointer flex items-center gap-4">
           <div className="w-2 h-2 bg-secondary animate-pulse rounded-full hidden md:block"></div>
@@ -42,7 +42,7 @@ const Navbar = ({ onOpenAuth }) => {
         </Link>
 
         {/* Center Links */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link, index) => (
             <Link 
               key={link.name} 

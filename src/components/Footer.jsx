@@ -9,7 +9,7 @@ const Footer = () => {
       {/* Decorative inner border line */}
       <div className="absolute top-2 left-4 right-4 h-px bg-white/5 pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 text-text/80">
           <div className="col-span-1 lg:col-span-1">
             <h2 className="text-2xl font-serif text-white mb-6 uppercase tracking-[0.2em]">
@@ -23,13 +23,10 @@ const Footer = () => {
           <div>
             <h3 className="text-xs uppercase tracking-widest font-bold text-white mb-8 border-b border-white/10 pb-4">Secure Links</h3>
             <ul className="space-y-4">
-              {['Home', 'Private Suites', 'Confidential Dining', 'Support Team'].map(link => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} className="hover:text-secondary transition-colors text-xs font-bold tracking-wider uppercase">
-                    {link}
-                  </a>
-                </li>
-              ))}
+              <li><Link to="/" className="hover:text-secondary transition-colors text-xs font-bold tracking-wider uppercase">Home</Link></li>
+              <li><Link to="/rooms" className="hover:text-secondary transition-colors text-xs font-bold tracking-wider uppercase">Private Suites</Link></li>
+              <li><Link to="/customer/dashboard" className="hover:text-secondary transition-colors text-xs font-bold tracking-wider uppercase">Confidential Dining</Link></li>
+              <li><Link to="/" className="hover:text-secondary transition-colors text-xs font-bold tracking-wider uppercase">Support Team</Link></li>
             </ul>
           </div>
 
@@ -74,10 +71,10 @@ const Footer = () => {
              2026 Grand Aura Private Holdings
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="font-bold text-[10px] text-text/40 hover:text-secondary transition-colors uppercase tracking-widest">Facebook</a>
-            <a href="#" className="font-bold text-[10px] text-text/40 hover:text-secondary transition-colors uppercase tracking-widest">Twitter</a>
-            <a href="#" className="font-bold text-[10px] text-text/40 hover:text-secondary transition-colors uppercase tracking-widest">Instagram</a>
-            <a href="#" className="font-bold text-[10px] text-text/40 hover:text-secondary transition-colors uppercase tracking-widest">LinkedIn</a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="font-bold text-[10px] text-text/40 hover:text-secondary transition-colors uppercase tracking-widest">Facebook</a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="font-bold text-[10px] text-text/40 hover:text-secondary transition-colors uppercase tracking-widest">Twitter</a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="font-bold text-[10px] text-text/40 hover:text-secondary transition-colors uppercase tracking-widest">Instagram</a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="font-bold text-[10px] text-text/40 hover:text-secondary transition-colors uppercase tracking-widest">LinkedIn</a>
           </div>
         </div>
       </div>

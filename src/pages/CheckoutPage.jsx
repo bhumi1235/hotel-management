@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { PortalContext } from '../context/PortalContext';
 import { ChevronLeft, ShieldCheck } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import AuthCard from '../components/AuthCard';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -71,7 +72,7 @@ const CheckoutPage = () => {
   return (
     <div className="min-h-screen bg-[#050505] flex flex-col text-text font-sans relative">
       <Navbar onOpenAuth={() => setIsAuthOpen(true)} />
-      <div className="flex-grow max-w-4xl mx-auto px-6 pt-32 w-full">
+      <div className="flex-grow max-w-[1440px] mx-auto px-6 pt-32 w-full">
         
         <button onClick={() => navigate(-1)} className="text-secondary flex items-center gap-2 text-[10px] uppercase font-bold tracking-widest mb-8 hover:text-white transition-colors">
           <ChevronLeft size={14} /> Back to Rooms
@@ -111,6 +112,7 @@ const CheckoutPage = () => {
                  </div>
               </div>
 
+              {/* Hide addons for now 
               <div className="space-y-3 pt-6 border-t border-white/5">
                 <label className="text-[10px] w-full text-text-muted uppercase font-bold tracking-widest block mb-2">Enhance Your Stay</label>
                 <label className="flex items-center gap-3 cursor-pointer group">
@@ -122,6 +124,7 @@ const CheckoutPage = () => {
                   <span className="text-xs text-white font-medium group-hover:text-secondary transition-colors">Full Board Meals (+₹15000/night)</span>
                 </label>
               </div>
+              */}
             </div>
 
             <div className="bg-black p-6 border border-white/5 rounded-sm flex flex-col">
@@ -171,6 +174,7 @@ const CheckoutPage = () => {
         
       </div>
 
+      <Footer />
       <AuthCard isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
     </div>
   );

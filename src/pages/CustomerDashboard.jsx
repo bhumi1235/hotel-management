@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { PortalContext } from '../context/PortalContext';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { Power, FileText, Ban, CalendarDays, Star, Coffee, Settings, Utensils, Bell } from 'lucide-react';
 
 const CustomerDashboard = () => {
@@ -12,6 +13,8 @@ const CustomerDashboard = () => {
   if (!currentUser) return null;
 
   const myBookings = bookings.filter(b => b.user_id === currentUser.user_id).reverse();
+  const upcomingBookings = myBookings.filter(b => b.status !== 'Cancelled');
+  const previousBookings = myBookings.filter(b => b.status === 'Cancelled');
 
   const handleLogout = () => {
     logout();
@@ -21,7 +24,7 @@ const CustomerDashboard = () => {
   return (
     <div className="min-h-screen bg-[#050505] flex flex-col text-text font-sans">
       <Navbar onOpenAuth={() => {}} />
-      <div className="flex-grow max-w-6xl mx-auto px-6 pt-32 pb-20 w-full flex flex-col md:flex-row gap-8">
+      <div className="flex-grow max-w-[1440px] mx-auto px-6 pt-32 pb-32 w-full flex flex-col md:flex-row gap-8">
         
         {/* Sidebar */}
         <div className="w-full md:w-64 shrink-0">
@@ -32,20 +35,12 @@ const CustomerDashboard = () => {
                 <p className="text-xs text-text-muted mt-2 truncate">{currentUser.email}</p>
              </div>
 
-             <div className="mb-6 p-4 rounded-sm border border-secondary/20 bg-secondary/5">
-                <span className="text-[10px] text-secondary font-bold uppercase tracking-widest flex items-center gap-2 mb-2">
-                  <Star size={12} className="fill-secondary text-secondary" /> Elite Member
-                </span>
-                <p className="text-white text-xl font-serif">12,450</p>
-                <p className="text-[9px] text-text-muted uppercase tracking-[0.2em] font-bold">Reward Points</p>
-             </div>
-
              <nav className="space-y-2 mb-8 border-t border-white/5 pt-6">
                <button onClick={() => setActiveTab('stays')} className={`w-full flex items-center gap-3 text-xs uppercase font-bold tracking-widest p-3 rounded-sm transition-colors ${activeTab === 'stays' ? 'bg-white/5 text-secondary' : 'text-text-muted hover:text-white'}`}>
                  <FileText size={14} /> Upcoming Stays
                </button>
-               <button onClick={() => setActiveTab('dining')} className={`w-full flex items-center gap-3 text-xs uppercase font-bold tracking-widest p-3 rounded-sm transition-colors ${activeTab === 'dining' ? 'bg-white/5 text-secondary' : 'text-text-muted hover:text-white'}`}>
-                 <Coffee size={14} /> Dining Reservations
+               <button onClick={() => setActiveTab('previous')} className={`w-full flex items-center gap-3 text-xs uppercase font-bold tracking-widest p-3 rounded-sm transition-colors ${activeTab === 'previous' ? 'bg-white/5 text-secondary' : 'text-text-muted hover:text-white'}`}>
+                 <CalendarDays size={14} /> Previous Stays
                </button>
                <button onClick={() => setActiveTab('preferences')} className={`w-full flex items-center gap-3 text-xs uppercase font-bold tracking-widest p-3 rounded-sm transition-colors ${activeTab === 'preferences' ? 'bg-white/5 text-secondary' : 'text-text-muted hover:text-white'}`}>
                  <Settings size={14} /> Preferences
@@ -64,19 +59,21 @@ const CustomerDashboard = () => {
              <h1 className="text-3xl font-serif text-white uppercase tracking-widest">My Bookings</h1>
            </div>
            
-           {activeTab === 'stays' && (
+           {(activeTab === 'stays' || activeTab === 'previous') && (
              <div className="space-y-4">
-               {myBookings.length === 0 ? (
+               {(activeTab === 'stays' ? upcomingBookings : previousBookings).length === 0 ? (
                  <div className="text-center py-24 bg-[#0a0a0a] border border-white/5 shadow-2xl rounded-sm flex flex-col items-center">
                    <CalendarDays strokeWidth={1} size={48} className="text-secondary mb-6 opacity-80" />
-                   <h3 className="text-2xl font-serif text-white uppercase tracking-widest mb-4">Your Journey Awaits</h3>
-                   <p className="text-[10px] max-w-sm mx-auto leading-relaxed uppercase font-bold tracking-[0.2em] text-text-muted mb-10">You currently have no active reservations. Explore our exclusive collection of luxury suites and properties.</p>
-                   <Link to="/rooms" className="bg-secondary text-black px-10 py-4 text-[10px] uppercase font-bold tracking-[0.2em] hover:bg-white transition-colors rounded-sm shadow-[0_0_30px_rgba(217,160,91,0.15)] inline-flex items-center gap-3">
-                     Discover Rooms
-                   </Link>
+                   <h3 className="text-2xl font-serif text-white uppercase tracking-widest mb-4">{activeTab === 'stays' ? 'Your Journey Awaits' : 'No Previous Stays'}</h3>
+                   <p className="text-[10px] max-w-sm mx-auto leading-relaxed uppercase font-bold tracking-[0.2em] text-text-muted mb-10">{activeTab === 'stays' ? 'You currently have no active reservations. Explore our exclusive collection of luxury suites and properties.' : 'You have no cancelled or past reservations on record.'}</p>
+                   {activeTab === 'stays' && (
+                     <Link to="/rooms" className="bg-secondary text-black px-10 py-4 text-[10px] uppercase font-bold tracking-[0.2em] hover:bg-white transition-colors rounded-sm shadow-[0_0_30px_rgba(217,160,91,0.15)] inline-flex items-center gap-3">
+                       Discover Rooms
+                     </Link>
+                   )}
                  </div>
                ) : (
-                 myBookings.map(b => (
+                 (activeTab === 'stays' ? upcomingBookings : previousBookings).map(b => (
                    <div key={b.booking_id} className="bg-[#121212] border border-white/5 rounded-sm p-6 flex flex-col lg:flex-row gap-6 justify-between items-start lg:items-center hover:border-white/10 transition-colors">
                      
                      <div className="flex-grow">
@@ -139,16 +136,7 @@ const CustomerDashboard = () => {
              </div>
            )}
 
-           {activeTab === 'dining' && (
-             <div className="text-center py-24 bg-[#0a0a0a] border border-white/5 shadow-2xl rounded-sm flex flex-col items-center">
-                <Utensils strokeWidth={1} size={48} className="text-secondary mb-6 opacity-80" />
-                <h3 className="text-2xl font-serif text-white uppercase tracking-widest mb-4">No Table Reservations</h3>
-                <p className="text-[10px] max-w-sm mx-auto leading-relaxed uppercase font-bold tracking-[0.2em] text-text-muted mb-10">You have no upcoming dining reservations. Secure a table at our award-winning restaurants.</p>
-                <button className="bg-transparent border border-white/20 text-white px-10 py-4 text-[10px] uppercase font-bold tracking-[0.2em] hover:border-secondary hover:text-secondary rounded-sm transition-colors inline-flex items-center gap-3">
-                  Under Construction
-                </button>
-             </div>
-           )}
+
 
            {activeTab === 'preferences' && (
              <div className="bg-[#121212] border border-white/5 rounded-sm p-6 shadow-2xl">
@@ -175,8 +163,8 @@ const CustomerDashboard = () => {
              </div>
            )}
         </div>
-
       </div>
+      <Footer />
     </div>
   );
 };
